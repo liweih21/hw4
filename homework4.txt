@@ -1,3 +1,49 @@
-1. price = pd.Series(sp500)
-   price.index.name = 'Year'
-2. 
+import pandas as pd
+1. price = pd.Series(sp500, name = 'sp500')
+
+2. price.index
+   price.values
+
+3. price.iloc[0:10]
+   price.head(10)
+   price.tail()
+
+4. price.loc[1980: ]
+   price.iloc[10: ]
+   yld = pd.Series(sp500div, name = 'sp500yield') / 100
+
+5. yld.nlargest(5)
+   price.nsmallest(5)
+   yld.idxmin()
+   yld.idxmax()
+   price.loc[yld.idxmin()]
+   price.loc[yld.idxmax()]
+
+6. yld[yld > 0.04]
+   yld[(yld > 0.04) & (yld < 0.05)]
+   yld.rank().sort_values().head()
+   yld.rank().sort_values().tail()
+
+7. pe = pd.Series(sp500pe, name = 'sp500pe')
+   pe.nlargest().sort_index()
+   ?
+
+8. ep = 1/pe
+   ep.mean()
+   ep.std()
+   ep.min()
+   ep.max()
+   ep[ep > ep.mean()]
+
+9. bond_yld = pd.Series(tenyr, name = 'tenyrbond') / 100
+   bond_yld.mean()
+   bond_yld[bond_yld < 0.03]
+   ep[bond_yld
+   [bond_yld < 0.03].index]
+
+10. A treasury bond is a certificate representing a loan to the federal government that matures in more than 10 years. ... Treasury bond prices and yields move in opposite directions—falling prices boost yields and rising prices lower yields.
+slow economic growth, tepid inflation expectations and not enough safe assets to go around have all contributed to the yield decline this year, analysts said. ... Bond prices move in the opposite direction of yields
+
+Stock market would be choice as mostly SP500 gains are bulls, if SP500 goes down seems the bond prices goes up that is a bear, mostly I would choose stock.
+
+
